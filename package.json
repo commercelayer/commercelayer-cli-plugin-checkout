@@ -72,7 +72,7 @@
     "@commercelayer/cli-core": "^2.0.4",
     "@commercelayer/js-auth": "^2.3.0",
     "@commercelayer/sdk": "^4.21.0",
-    "@oclif/core": "^1.26.1",
+    "@oclif/core": "^2.0.7",
     "open": "^8.4.0",
     "tslib": "^2.5.0"
   },
