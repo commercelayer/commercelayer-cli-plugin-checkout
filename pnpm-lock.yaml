@@ -29,8 +29,8 @@ devDependencies:
     specifier: ^1.2.0
     version: 1.2.0(eslint@8.54.0)(typescript@5.3.2)
   '@oclif/plugin-help':
-    specifier: ^5.2.20
-    version: 5.2.20(@types/node@20.9.4)(typescript@5.3.2)
+    specifier: ^6.0.7
+    version: 6.0.7(typescript@5.3.2)
   '@oclif/test':
     specifier: ^2.5.6
     version: 2.5.6(@types/node@20.9.4)(typescript@5.3.2)
@@ -806,6 +806,15 @@ packages:
       - '@swc/core'
       - '@swc/wasm'
       - '@types/node'
+      - typescript
+    dev: true
+
+  /@oclif/plugin-help@6.0.7(typescript@5.3.2):
+    resolution: {integrity: sha512-+apYpLuNk6VGNuZZbFdwUlTcFb+FkQnySWR5S5pZYC+yHcT39zgOK06NAheHHhd5KSzroFwQu7RTdHnK6Tzakg==}
+    engines: {node: '>=18.0.0'}
+    dependencies:
+      '@oclif/core': 3.12.0(typescript@5.3.2)
+    transitivePeerDependencies:
       - typescript
     dev: true
 
