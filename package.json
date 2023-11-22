@@ -75,7 +75,7 @@
     "@commercelayer/cli-core": "^4.3.3",
     "@commercelayer/sdk": "^5.22.1",
     "@oclif/core": "^2.15.0",
-    "open": "^8.4.2",
+    "open": "^9.1.0",
     "tslib": "^2.6.2"
   },
   "publishConfig": {
