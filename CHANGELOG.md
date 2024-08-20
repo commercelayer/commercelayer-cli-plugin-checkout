@@ -1,3 +1,10 @@
+# [5.1.0-beta.1](https://github.com/commercelayer/commercelayer-cli-plugin-checkout/compare/v5.0.2...v5.1.0-beta.1) (2024-08-20)
+
+
+### Features
+
+* migrate to oclif/core v4 and oclif/test v4 ([50b51da](https://github.com/commercelayer/commercelayer-cli-plugin-checkout/commit/50b51da6216c4d446229c3f0bcbbcc34a48a6d92))
+
 ## [5.0.2](https://github.com/commercelayer/commercelayer-cli-plugin-checkout/compare/v5.0.1...v5.0.2) (2024-06-19)
 
 
