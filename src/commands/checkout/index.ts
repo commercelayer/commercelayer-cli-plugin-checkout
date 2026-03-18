@@ -104,7 +104,7 @@ export default class CheckoutIndex extends Command {
     // Build line items
     const lineItemList: LineItemCreate[] = this.buildLineItems(skuList, bundleList)
 
-    const cl = this.commercelayerInit(flags)
+    this.commercelayerInit(flags)
 
     // Check SKUs existence
     const liSkus = lineItemList.filter(li => li.item_type === 'skus')

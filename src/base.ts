@@ -1,5 +1,5 @@
 import commercelayer, { type CommerceLayerClient, CommerceLayerStatic } from '@commercelayer/sdk'
-import { Command, Flags, Args, Errors } from '@oclif/core'
+import { Command, Flags, Args, type Errors } from '@oclif/core'
 import { clColor, clOutput, clToken, clUpdate, clUtil } from '@commercelayer/cli-core'
 
 
