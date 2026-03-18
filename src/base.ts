@@ -1,7 +1,7 @@
 import commercelayer, { type CommerceLayerClient, CommerceLayerStatic } from '@commercelayer/sdk'
-import { Command, Flags, Args } from '@oclif/core'
+import { Command, Flags, Args, Errors } from '@oclif/core'
 import { clColor, clOutput, clToken, clUpdate, clUtil } from '@commercelayer/cli-core'
-import type { CommandError } from '@oclif/core/lib/interfaces'
+
 
 
 const pkg: clUpdate.Package = require('../package.json')
@@ -18,14 +18,14 @@ export default abstract class extends Command {
       description: 'the slug of your organization',
       required: true,
       env: 'CL_CLI_ORGANIZATION',
-      hidden: true,
+      hidden: true
     }),
     domain: Flags.string({
       char: 'd',
       required: false,
       hidden: true,
       dependsOn: ['organization'],
-      env: 'CL_CLI_DOMAIN',
+      env: 'CL_CLI_DOMAIN'
     }),
     accessToken: Flags.string({
       char: 'a',
@@ -36,11 +36,7 @@ export default abstract class extends Command {
       dependsOn: ['organization']
     }),
     open: Flags.boolean({
-      description: 'open checkout URL in default browser',
-    }),
-    staging: Flags.boolean({
-      description: 'connect to Checkout application in Staging environment',
-      hidden: true,
+      description: 'open checkout URL in default browser'
     })
     /*,
     link: Flags.boolean({
@@ -58,12 +54,12 @@ export default abstract class extends Command {
   }
 
 
-  async catch(error: CommandError): Promise<any> {
+  async catch(error: Errors.CLIError): Promise<any> {
     return this.handleError(error)
   }
 
 
-  protected async handleError(error: CommandError, flags?: any): Promise<any> {
+  protected async handleError(error: Errors.CLIError, flags?: any): Promise<any> {
     if (CommerceLayerStatic.isApiError(error)) {
       if (error.status === 401) {
         const err = error.first()

@@ -1,6 +1,6 @@
 import Command, { Flags } from '../../base'
 import CheckoutOrder from './order'
-import type { LineItemCreate } from '@commercelayer/sdk'
+import { bundles, line_items, markets, orders, skus, type LineItemCreate } from '@commercelayer/sdk'
 import { buildCheckoutUrl, openCheckoutUrl } from '../../url'
 import { clColor, clCommand } from '@commercelayer/cli-core'
 
@@ -74,7 +74,6 @@ export default class CheckoutIndex extends Command {
     const organization = flags.organization
     const accessToken = flags.accessToken
     const domain = flags.domain
-    const staging = flags.staging
 
 
     // Checkout URL by order id
@@ -99,24 +98,24 @@ export default class CheckoutIndex extends Command {
     this.checkAcessTokenData(accessToken, flags)
 
     // Parse SKU and Bundle options
-    const skus: string[] = this.parseItems(flags.sku)
-    const bundles: string[] = this.parseItems(flags.bundle)
+    const skuList: string[] = this.parseItems(flags.sku)
+    const bundleList: string[] = this.parseItems(flags.bundle)
 
     // Build line items
-    const lineItems: LineItemCreate[] = this.buildLineItems(skus, bundles)
+    const lineItemList: LineItemCreate[] = this.buildLineItems(skuList, bundleList)
 
     const cl = this.commercelayerInit(flags)
 
     // Check SKUs existence
-    const liSkus = lineItems.filter(li => li.item_type === 'skus')
-    const clSkus = await cl.skus.list({ filters: { code_matches_any: liSkus.map(li => li.sku_code).join(',') } })
+    const liSkus = lineItemList.filter(li => li.item_type === 'skus')
+    const clSkus = await skus.list({ filters: { code_matches_any: liSkus.map(li => li.sku_code).join(',') } })
     for (const li of liSkus) {
       if (!clSkus.some(cls => cls.code === li.sku_code)) this.error(`Inexistent ${this.itemName('sku')}: ${clColor.msg.error(String(li.sku_code))}`)
     }
 
     // Check bundles existence
-    const liBundles = lineItems.filter(li => li.item_type === 'bundles')
-    const clBundles = await cl.bundles.list({ filters: { code_matches_any: liBundles.map(li => li.bundle_code).join(',') } })
+    const liBundles = lineItemList.filter(li => li.item_type === 'bundles')
+    const clBundles = await bundles.list({ filters: { code_matches_any: liBundles.map(li => li.bundle_code).join(',') } })
     for (const li of liBundles) {
       if (!clBundles.some(clb => clb.code === li.bundle_code)) this.error(`Inexistent ${this.itemName('bundle')}: ${clColor.msg.error(String(li.bundle_code))}`)
     }
@@ -126,10 +125,10 @@ export default class CheckoutIndex extends Command {
     const coupon = flags.coupon
     const email = flags.email
 
-    const order = await cl.orders.create({
+    const order = await orders.create({
       customer_email: email,
       coupon_code: coupon,
-      market: market ? cl.markets.relationship(market) : undefined,
+      market: market ? markets.relationship(market) : undefined,
     })
     this.log(`\nCreated order ${clColor.api.id(order.id)}`)
 
@@ -137,9 +136,9 @@ export default class CheckoutIndex extends Command {
     // Create line items
     const lis: Array<Promise<LineItemCreate> | Promise<void>> = []
 
-    lineItems.forEach((li): void => {
-      li.order = cl.orders.relationship(order)
-      const lineItem = cl.line_items.create(li).then(lic => {
+    lineItemList.forEach((li): void => {
+      li.order = orders.relationship(order)
+      const lineItem = line_items.create(li).then(lic => {
         const liName = this.itemName(li.item_type || '')
         const liCode = (['sku', 'skus'].includes(lic.item_type || '')) ? lic.sku_code : lic.bundle_code
         this.log(`Created line item ${clColor.api.id(lic.id)} for ${liName} ${clColor.cli.value.italic(String(liCode))} and associated to order ${clColor.api.id(order.id)}`)
@@ -150,7 +149,7 @@ export default class CheckoutIndex extends Command {
 
     await Promise.all(lis)
 
-    const checkoutUrl = buildCheckoutUrl(organization, order.id, accessToken, { domain, staging })
+    const checkoutUrl = buildCheckoutUrl(organization, order.id, accessToken, domain)
 
     this.log(`\nCheckout URL for order ${clColor.api.id(order.id)}:\n`)
     this.log(clColor.cyanBright(checkoutUrl))

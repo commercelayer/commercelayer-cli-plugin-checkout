@@ -1,7 +1,7 @@
-import { CommerceLayerStatic } from '@commercelayer/sdk'
 import Command, { Args } from '../../base'
 import { clColor, clOutput } from '@commercelayer/cli-core'
 import { buildCheckoutUrl, openCheckoutUrl } from '../../url'
+import { CommerceLayerStatic, orders } from '@commercelayer/sdk'
 
 
 export default class CheckoutOrder extends Command {
@@ -26,17 +26,16 @@ export default class CheckoutOrder extends Command {
     const organization = flags.organization
     const accessToken = flags.accessToken
     const domain = flags.domain
-    const staging = flags.staging
 
-    const cl = this.commercelayerInit(flags)
+    this.commercelayerInit(flags)
 
     try {
 
       this.checkAcessTokenData(accessToken, flags)
 
-      const order = await cl.orders.retrieve(id, { fields: { orders: ['id', 'number'] } })
+      const order = await orders.retrieve(id, { fields: { orders: ['id', 'number'] } })
 
-      const checkoutUrl = buildCheckoutUrl(organization, order.id, accessToken, { domain, staging })
+      const checkoutUrl = buildCheckoutUrl(organization, order.id, accessToken, domain)
 
       this.log(`\nCheckout URL for order ${clColor.api.id(order.id)}:\n`)
       this.log(clColor.cyanBright(checkoutUrl))

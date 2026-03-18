@@ -49,34 +49,35 @@
     "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
     "readme": "cl-cli-dev readme --plugin --bin=commercelayer && git add README.md",
     "lint": "eslint src --ext .ts --config .eslintrc",
-    "lint:fix": "eslint src --fix"
+    "lint:fix": "eslint src --fix",
+    "release": "pnpm upgrade && pnpm prepack && pnpm postpack"
   },
   "types": "lib/index.d.ts",
   "devDependencies": {
-    "@commercelayer/cli-dev": "^3.0.5",
+    "@commercelayer/cli-dev": "beta",
     "@commercelayer/eslint-config-ts": "^1.4.5",
-    "@oclif/plugin-help": "^6.2.8",
-    "@oclif/test": "^4.0.8",
+    "@oclif/plugin-help": "^6.2.38",
+    "@oclif/test": "^4.1.16",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "@types/chai": "^4.3.17",
-    "@types/mocha": "^10.0.7",
-    "@types/node": "^22.4.1",
-    "chai": "^4.5.0",
-    "eslint": "^8.57.0",
-    "mocha": "^10.7.3",
-    "nyc": "^15.1.0",
-    "oclif": "^4.14.22",
-    "semantic-release": "^24.1.0",
-    "tsx": "^4.17.0",
-    "typescript": "5.3.3"
+    "@types/chai": "^5.2.3",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^25.5.0",
+    "chai": "^6.2.2",
+    "eslint": "^8.57.1",
+    "mocha": "^11.7.5",
+    "nyc": "^18.0.0",
+    "oclif": "^4.22.92",
+    "semantic-release": "^25.0.3",
+    "tsx": "^4.21.0",
+    "typescript": "5.9.3"
   },
   "dependencies": {
     "@commercelayer/cli-core": "beta",
-    "@commercelayer/sdk": "^6.13.0",
-    "@oclif/core": "^4.0.17",
-    "open": "^8.4.2",
-    "tslib": "^2.6.3"
+    "@commercelayer/sdk": "^7.9.0",
+    "@oclif/core": "^4.9.0",
+    "open": "^11.0.0",
+    "tslib": "^2.8.1"
   },
   "publishConfig": {
     "access": "public"

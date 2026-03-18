@@ -39,18 +39,19 @@ Create checkout URLs.
 
 ```sh-session
 USAGE
-  $ commercelayer checkout (-a <value> ) [--open] [-m <value> | [-O <value> | -S <value> | -B <value>]] [-c
-    <value> | ] [-e <value> | ]
+  $ commercelayer checkout (-a <value> ) [--open] [-m <value> | [-O <value> | -S <value>... | -B <value>...]]
+    [-c <value> | ] [-e <value> | ]
 
 FLAGS
   -B, --bundle=<value>...    a bundle code
   -O, --order=<value>        an order id
   -S, --sku=<value>...       an SKU code
-  -a, --accessToken=<value>  (required) custom access token to use instead of the one used for login
+  -a, --accessToken=<value>  (required) [env: CL_CLI_ACCESS_TOKEN] custom access token to use instead of the one used
+                             for login
   -c, --coupon=<value>       a promo code
   -e, --email=<value>        a customer email
   -m, --market=<value>       a market number
-  --open                     open checkout URL in default browser
+      --open                 open checkout URL in default browser
 
 DESCRIPTION
   create checkout URLs
@@ -77,8 +78,9 @@ ARGUMENTS
   ID  unique id of the order
 
 FLAGS
-  -a, --accessToken=<value>  (required) custom access token to use instead of the one used for login
-  --open                     open checkout URL in default browser
+  -a, --accessToken=<value>  (required) [env: CL_CLI_ACCESS_TOKEN] custom access token to use instead of the one used
+                             for login
+      --open                 open checkout URL in default browser
 
 DESCRIPTION
   create checkout URLs starting from an existing order
