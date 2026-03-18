@@ -1,5 +1,5 @@
 import commercelayer, { type CommerceLayerClient, CommerceLayerStatic } from '@commercelayer/sdk'
-import { Command, Flags, Args, type Errors } from '@oclif/core'
+import { Command, Flags, Args, type Interfaces } from '@oclif/core'
 import { clColor, clOutput, clToken, clUpdate, clUtil } from '@commercelayer/cli-core'
 
 
@@ -54,12 +54,12 @@ export default abstract class extends Command {
   }
 
 
-  async catch(error: Errors.CLIError): Promise<any> {
+  async catch(error: Interfaces.CommandError): Promise<any> {
     return this.handleError(error)
   }
 
 
-  protected async handleError(error: Errors.CLIError, flags?: any): Promise<any> {
+  protected async handleError(error: Interfaces.CommandError, flags?: any): Promise<any> {
     if (CommerceLayerStatic.isApiError(error)) {
       if (error.status === 401) {
         const err = error.first()
