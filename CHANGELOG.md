@@ -1,3 +1,10 @@
+# [6.0.0-beta.3](https://github.com/commercelayer/commercelayer-cli-plugin-checkout/compare/v6.0.0-beta.2...v6.0.0-beta.3) (2026-03-18)
+
+
+### Bug Fixes
+
+* update dependencies ([9561e29](https://github.com/commercelayer/commercelayer-cli-plugin-checkout/commit/9561e29b3c5c515e8af9523995dc3708e7b7e4af))
+
 # [6.0.0-beta.2](https://github.com/commercelayer/commercelayer-cli-plugin-checkout/compare/v6.0.0-beta.1...v6.0.0-beta.2) (2026-03-18)
 
 
