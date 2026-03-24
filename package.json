@@ -1,7 +1,7 @@
 {
   "name": "@commercelayer/cli-plugin-checkout",
   "description": "Commerce Layer CLI Checkout plugin",
-  "version": "5.0.2",
+  "version": "5.0.15",
   "author": "Pierluigi Viti <pierluigi@commercelayer.io>",
   "homepage": "https://github.com/commercelayer/commercelayer-cli-plugin-checkout",
   "repository": "commercelayer/commercelayer-cli-plugin-checkout",
@@ -42,41 +42,41 @@
     "topicSeparator": ":"
   },
   "scripts": {
-    "postpack": "rm -f oclif.manifest.json",
-    "posttest": "eslint . --ext .ts --config .eslintrc",
     "build": "rm -rf lib && tsc -b",
     "prepack": "pnpm build && oclif manifest && pnpm readme",
+    "postpack": "rm -f oclif.manifest.json",
     "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
+    "posttest": "eslint . --ext .ts --config .eslintrc",
     "readme": "cl-cli-dev readme --plugin --bin=commercelayer && git add README.md",
-    "lint": "eslint src --ext .ts --config .eslintrc",
-    "lint:fix": "eslint src --fix"
+    "lint": "biome check --enforce-assist=true",
+    "check": "biome check --enforce-assist=true --write",
+    "release": "pnpm upgrade && pnpm lint && pnpm prepack && pnpm postpack"
   },
   "types": "lib/index.d.ts",
   "devDependencies": {
-    "@commercelayer/cli-dev": "^3.0.5",
-    "@commercelayer/eslint-config-ts": "^1.4.5",
-    "@oclif/plugin-help": "^6.2.8",
-    "@oclif/test": "^4.0.8",
+    "@biomejs/biome": "2.4.8",
+    "@commercelayer/cli-dev": "oclif4",
+    "@oclif/plugin-help": "^6.2.40",
+    "@oclif/test": "^4.1.17",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "@types/chai": "^4.3.17",
-    "@types/mocha": "^10.0.7",
-    "@types/node": "^22.4.1",
+    "@types/chai": "^4.3.20",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^25.5.0",
     "chai": "^4.5.0",
-    "eslint": "^8.57.0",
-    "mocha": "^10.7.3",
+    "mocha": "^11.7.5",
     "nyc": "^15.1.0",
-    "oclif": "^4.14.22",
-    "semantic-release": "^24.1.0",
-    "tsx": "^4.17.0",
-    "typescript": "5.3.3"
+    "oclif": "^4.22.96",
+    "semantic-release": "^25.0.3",
+    "tsx": "^4.21.0",
+    "typescript": "6.0.2"
   },
   "dependencies": {
-    "@commercelayer/cli-core": "beta",
-    "@commercelayer/sdk": "^6.13.0",
-    "@oclif/core": "^4.0.17",
+    "@commercelayer/cli-core": "oclif4",
+    "@commercelayer/sdk": "^6.55.0",
+    "@oclif/core": "^4.10.2",
     "open": "^8.4.2",
-    "tslib": "^2.6.3"
+    "tslib": "^2.8.1"
   },
   "publishConfig": {
     "access": "public"

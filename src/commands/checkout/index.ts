@@ -1,8 +1,8 @@
-import Command, { Flags } from '../../base'
-import CheckoutOrder from './order'
-import type { LineItemCreate } from '@commercelayer/sdk'
-import { buildCheckoutUrl, openCheckoutUrl } from '../../url'
 import { clColor, clCommand } from '@commercelayer/cli-core'
+import type { LineItemCreate } from '@commercelayer/sdk'
+import Command, { Flags } from '../../base'
+import { buildCheckoutUrl, openCheckoutUrl } from '../../url'
+import CheckoutOrder from './order'
 
 
 type LineItemType = 'skus' | 'bundles'
@@ -74,7 +74,6 @@ export default class CheckoutIndex extends Command {
     const organization = flags.organization
     const accessToken = flags.accessToken
     const domain = flags.domain
-    const staging = flags.staging
 
 
     // Checkout URL by order id
@@ -150,7 +149,7 @@ export default class CheckoutIndex extends Command {
 
     await Promise.all(lis)
 
-    const checkoutUrl = buildCheckoutUrl(organization, order.id, accessToken, { domain, staging })
+    const checkoutUrl = buildCheckoutUrl(organization, order.id, accessToken, domain)
 
     this.log(`\nCheckout URL for order ${clColor.api.id(order.id)}:\n`)
     this.log(clColor.cyanBright(checkoutUrl))
@@ -163,7 +162,7 @@ export default class CheckoutIndex extends Command {
 
   private parseItems(itemsFlags?: string[]): string[] {
     const items: string[] = []
-    if (itemsFlags) itemsFlags.forEach((i: string) => items.push(...i.split(',')))
+    if (itemsFlags) itemsFlags.forEach((i: string) => { items.push(...i.split(',')) })
     return items
   }
 
