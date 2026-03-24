@@ -1,24 +1,14 @@
-## [5.0.18](https://github.com/commercelayer/commercelayer-cli-plugin-checkout/compare/v5.0.17...v5.0.18) (2026-04-14)
-
-
-### Bug Fixes
-
-* fix release script ([0609437](https://github.com/commercelayer/commercelayer-cli-plugin-checkout/commit/06094375da448a8ab94a8c340159fc2e202019df))
-* update dependencies and add updates workflow ([543b426](https://github.com/commercelayer/commercelayer-cli-plugin-checkout/commit/543b42671ae266615b9db7ce6db16d68f1d4f465))
-
-## [5.0.17](https://github.com/commercelayer/commercelayer-cli-plugin-checkout/compare/v5.0.16...v5.0.17) (2026-03-24)
-
-
-### Bug Fixes
-
-* update dependencies ([1df2f03](https://github.com/commercelayer/commercelayer-cli-plugin-checkout/commit/1df2f03448181800269da0726604843dcbaaf76f))
-
-## [5.0.16](https://github.com/commercelayer/commercelayer-cli-plugin-checkout/compare/v5.0.15...v5.0.16) (2026-03-24)
+# [5.1.0-oclif4.1](https://github.com/commercelayer/commercelayer-cli-plugin-checkout/compare/v5.0.15...v5.1.0-oclif4.1) (2026-03-24)
 
 
 ### Bug Fixes
 
 * add biome ([5eceb91](https://github.com/commercelayer/commercelayer-cli-plugin-checkout/commit/5eceb9161c878f989744a4ed70ba8271d3668097))
+
+
+### Features
+
+* migrate to oclif/core v4 and oclif/test v4 ([50b51da](https://github.com/commercelayer/commercelayer-cli-plugin-checkout/commit/50b51da6216c4d446229c3f0bcbbcc34a48a6d92))
 
 ## [5.0.15](https://github.com/commercelayer/commercelayer-cli-plugin-checkout/compare/v5.0.14...v5.0.15) (2026-03-13)
 
