@@ -1,3 +1,15 @@
+# [6.0.0-oclif4.1](https://github.com/commercelayer/commercelayer-cli-plugin-checkout/compare/v5.1.0-oclif4.2...v6.0.0-oclif4.1) (2026-03-26)
+
+
+### Features
+
+* require node to v22 ([25951e9](https://github.com/commercelayer/commercelayer-cli-plugin-checkout/commit/25951e99cda1daa023ff30ca1e4fdd38a13db947))
+
+
+### BREAKING CHANGES
+
+* require node to v22
+
 # [5.1.0-oclif4.2](https://github.com/commercelayer/commercelayer-cli-plugin-checkout/compare/v5.1.0-oclif4.1...v5.1.0-oclif4.2) (2026-03-26)
 
 
