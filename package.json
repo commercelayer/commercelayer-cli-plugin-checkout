@@ -72,9 +72,9 @@
     "typescript": "6.0.2"
   },
   "dependencies": {
-    "@commercelayer/cli-core": "^5.11.1",
+    "@commercelayer/cli-core": "oclif4",
     "@commercelayer/sdk": "^6.57.0",
-    "@oclif/core": "^3.27.0",
+    "@oclif/core": "^4.10.5",
     "open": "^8.4.2",
     "tslib": "^2.8.1"
   },

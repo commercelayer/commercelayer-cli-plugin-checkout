@@ -9,14 +9,14 @@ importers:
   .:
     dependencies:
       '@commercelayer/cli-core':
-        specifier: ^5.11.1
-        version: 5.11.1
+        specifier: oclif4
+        version: 6.0.0-oclif4.11
       '@commercelayer/sdk':
         specifier: ^6.57.0
         version: 6.57.0
       '@oclif/core':
-        specifier: ^3.27.0
-        version: 3.27.0
+        specifier: ^4.10.5
+        version: 4.10.5
       open:
         specifier: ^8.4.2
         version: 8.4.2
@@ -378,18 +378,18 @@ packages:
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==}
     engines: {node: '>=0.1.90'}
 
-  '@commercelayer/cli-core@5.11.1':
-    resolution: {integrity: sha512-wbnE02yp5jOYY/UUNNFjEkvzScgVU5cJoGrPjXvJow/Vk25i9FXzgFcMSHpMtYJ8IlNFQhCdyx031P1rZx7Rog==}
-    engines: {node: '>=20'}
+  '@commercelayer/cli-core@6.0.0-oclif4.11':
+    resolution: {integrity: sha512-HD4NjYdvkXoeASapO+kkcwYAVw3M29hkVyY1w0SHjozX40tWJwUGFhw97RMV8B6kNuqBZuj/SkS0tX7F/76VNg==}
+    engines: {node: '>=22'}
 
   '@commercelayer/cli-dev@3.1.3':
     resolution: {integrity: sha512-wIQoBS3cZPQN20NrewJaBCsJSOjaHUCPt/2J1oxLN96DOTzN4d2pmacC2JR7iKuCX+XBPRPnJwTqSIfnUekhvw==}
     engines: {node: '>=20'}
     hasBin: true
 
-  '@commercelayer/js-auth@6.7.2':
-    resolution: {integrity: sha512-kk4VqN2iEOreXFq76YqTP83KhBs09Z5Ez9nZNlikXWf5DXzkrOfShqqEwq8ezHjSOlqs4xVyxgQzsEdPP35CeQ==}
-    engines: {node: '>=18.0.0'}
+  '@commercelayer/js-auth@7.4.1':
+    resolution: {integrity: sha512-5OLk7EknJowznEEEBBPfcl1uhx5apJ0OESyzqocjCXY3sPma9pabGCMJWelmGIU/esoqvdwNIFGIc2EIeVea6A==}
+    engines: {node: '>=20.0.0'}
 
   '@commercelayer/sdk@6.57.0':
     resolution: {integrity: sha512-m4Rk8bKd2B32xWLxy+b4K5p0fAuhOG0FN5WGXxTbiVXV88YP3xYEYQZZDDy70A1p9TchsNH+bTnhtRdqn+Mcug==}
@@ -4070,10 +4070,10 @@ snapshots:
   '@colors/colors@1.5.0':
     optional: true
 
-  '@commercelayer/cli-core@5.11.1':
+  '@commercelayer/cli-core@6.0.0-oclif4.11':
     dependencies:
-      '@commercelayer/js-auth': 6.7.2
-      '@oclif/core': 3.27.0
+      '@commercelayer/js-auth': 7.4.1
+      '@oclif/core': 4.10.5
       chalk: 4.1.2
       jsonwebtoken: 9.0.3
       update-notifier-cjs: 5.1.7
@@ -4089,7 +4089,7 @@ snapshots:
       normalize-package-data: 5.0.0
       tslib: 2.8.1
 
-  '@commercelayer/js-auth@6.7.2': {}
+  '@commercelayer/js-auth@7.4.1': {}
 
   '@commercelayer/sdk@6.57.0': {}
 
@@ -4475,7 +4475,7 @@ snapshots:
 
   '@oclif/plugin-warn-if-update-available@3.1.60':
     dependencies:
-      '@oclif/core': 4.9.0
+      '@oclif/core': 4.10.5
       ansis: 3.17.0
       debug: 4.4.3(supports-color@8.1.1)
       http-call: 5.3.0
