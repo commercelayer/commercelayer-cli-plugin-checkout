@@ -1,13 +1,13 @@
 {
   "name": "@commercelayer/cli-plugin-checkout",
   "description": "Commerce Layer CLI Checkout plugin",
-  "version": "5.0.17",
+  "version": "6.0.0-oclif4.2",
   "author": "Pierluigi Viti <pierluigi@commercelayer.io>",
   "homepage": "https://github.com/commercelayer/commercelayer-cli-plugin-checkout",
   "repository": "commercelayer/commercelayer-cli-plugin-checkout",
   "bugs": "https://github.com/commercelayer/commercelayer-cli-plugin-checkout/issues",
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "files": [
     "/bin/run.*",
@@ -50,14 +50,14 @@
     "readme": "cl-cli-dev readme --plugin --bin=commercelayer && git add README.md",
     "lint": "biome check --enforce-assist=true",
     "check": "biome check --enforce-assist=true --write",
-    "release": "pnpm upgrade && pnpm lint && pnpm prepack && pnpm postpack"
+    "release": "pnpm upgrade && pnpm prepack && pnpm postpack && pnpm test"
   },
   "types": "lib/index.d.ts",
   "devDependencies": {
-    "@biomejs/biome": "2.4.8",
-    "@commercelayer/cli-dev": "^3.0.13",
+    "@biomejs/biome": "^2.4.9",
+    "@commercelayer/cli-dev": "oclif4",
     "@oclif/plugin-help": "^6.2.40",
-    "@oclif/test": "^3.2.15",
+    "@oclif/test": "^4.1.17",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@types/chai": "^5.2.3",
@@ -72,9 +72,9 @@
     "typescript": "6.0.2"
   },
   "dependencies": {
-    "@commercelayer/cli-core": "^5.10.8",
+    "@commercelayer/cli-core": "oclif4",
     "@commercelayer/sdk": "^6.55.0",
-    "@oclif/core": "^3.27.0",
+    "@oclif/core": "^4.10.3",
     "open": "^8.4.2",
     "tslib": "^2.8.1"
   },
