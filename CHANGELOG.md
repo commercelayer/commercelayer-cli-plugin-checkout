@@ -1,3 +1,10 @@
+# [6.0.0-oclif4.2](https://github.com/commercelayer/commercelayer-cli-plugin-checkout/compare/v6.0.0-oclif4.1...v6.0.0-oclif4.2) (2026-03-27)
+
+
+### Bug Fixes
+
+* update dependencies and fix review issues ([aba947f](https://github.com/commercelayer/commercelayer-cli-plugin-checkout/commit/aba947f4ca743bfccd3774fc6419c8ec01817146))
+
 # [6.0.0-oclif4.1](https://github.com/commercelayer/commercelayer-cli-plugin-checkout/compare/v5.1.0-oclif4.2...v6.0.0-oclif4.1) (2026-03-26)
 
 
