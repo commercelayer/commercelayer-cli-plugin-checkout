@@ -8,7 +8,7 @@ export default class Noc extends Command {
 
   async run(): Promise<any> {
 
-    const _parsed = await this.parse(Noc)
+    await this.parse(Noc)
 
     const output = '-= NoC =-'
 

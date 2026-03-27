@@ -74,7 +74,7 @@
   "dependencies": {
     "@commercelayer/cli-core": "oclif4",
     "@commercelayer/sdk": "^6.55.0",
-    "@oclif/core": "^4.10.2",
+    "@oclif/core": "^4.10.3",
     "open": "^8.4.2",
     "tslib": "^2.8.1"
   },
