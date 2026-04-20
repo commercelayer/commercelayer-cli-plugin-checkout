@@ -8,6 +8,8 @@ export default class Noc extends Command {
 
   async run(): Promise<any> {
 
+    await this.parse(Noc)
+
     const output = '-= NoC =-'
 
     this.log(output)

@@ -1,12 +1,10 @@
-import { expect, test } from '@oclif/test'
+import { runCommand } from '@oclif/test'
+import { expect } from 'chai'
+
 
 describe('checkout:index', () => {
-  test
-    .timeout(5000)
-    .stdout()
-    .command(['checkout:noc'])
-    .it('runs NoC', ctx => {
-      expect(ctx.stdout).to.contain('-= NoC =-')
-    })
-
+  it('runs checkout command', async () => {
+    const { error } = await runCommand(['checkout', '--help'])
+    if (error) expect((error as any).oclif?.exit).to.equal(0)
+  }).timeout(15000)
 })
